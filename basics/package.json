@@ -1,0 +1,27 @@
+{
+  "name": "basics",
+  "version": "1.0.0",
+  "description": "Basics of Node JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start_server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishal2796/basic-advanced-NodeJS.git"
+  },
+  "author": "Vishal Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishal2796/basic-advanced-NodeJS/issues"
+  },
+  "homepage": "https://github.com/vishal2796/basic-advanced-NodeJS#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
