@@ -3,66 +3,21 @@
 }
 
 .form-control label,
-.form-control input {
+.form-control input,
+.form-control textarea {
   display: block;
   width: 100%;
   margin-bottom: 0.25rem;
 }
 
-.form-control input {
+.form-control input,
+.form-control textarea {
   border: 1px solid #a1a1a1;
   font: inherit;
   border-radius: 2px;
 }
 
-.form-control input:focus {
+.form-control input:focus,
+.form-control textarea:focus {
   outline-color: #00695c;
-}
-
-button {
-  border: 1px solid greenyellow;
-  background: wheat;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-button:hover,
-button:active {
-  background-color: purple;
-  color: aliceblue;
-}
-
-.contact-form {
-  width: 20rem;
-  max-width: 90%;
-  margin: auto;
-}
-
-.form-box {
-  margin: auto;
-  padding: 2rem;
-  border: 2px solid goldenrod;
-  border-radius: 6px;
-  width: 50%;
-}
-
-.submit-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.submit-btn button {
-  width: 100%;
-  background-color: rgb(248, 228, 115);
-}
-
-.heading {
-  margin: auto;
-  text-align: center;
-}
-
-.submit-btn button:hover,
-.submit-btn button:active {
-  color: rgb(175, 149, 2);
 }
