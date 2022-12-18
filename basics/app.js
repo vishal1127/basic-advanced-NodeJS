@@ -1,28 +1,27 @@
+const path = require("path");
+
 const express = require("express");
 const bodyParser = require("body-parser");
+const errorController = require("./controllers/error");
+
 const app = express();
-const path = require("path");
+
+app.set("view engine", "ejs");
+app.set("views", "views");
 
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
-const contactUsRoute = require("./routes/contactus");
-const successRoute = require("./routes/success");
-// const authRoutes = require("./routes/auth");
-// const formRoutes = require("./routes/form");
+const contactUsRoutes = require("./routes/contactus");
+const successRoutes = require("./routes/success");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
-app.use(contactUsRoute);
-app.use(successRoute);
-// app.use(authRoutes);
-// app.use(formRoutes);
+app.use(contactUsRoutes);
+app.use(successRoutes);
 
-//Handling 404 error page
-app.use((req, res, next) => {
-  res.status(404).sendFile(path.join(__dirname, "views", "404page.html"));
-});
+app.use(errorController.get404);
 
 app.listen(3000);

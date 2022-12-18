@@ -1,30 +1,23 @@
 {
-  "name": "basics",
+  "name": "nodejs-complete-guide",
   "version": "1.0.0",
-  "description": "Basics of Node JS",
+  "description": "Complete Node.js Guide",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "start_server": "node app.js"
+    "start-server": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vishal2796/basic-advanced-NodeJS.git"
-  },
-  "author": "Vishal Singh",
+  "author": "Maximilian Schwarzmüller",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vishal2796/basic-advanced-NodeJS/issues"
-  },
-  "homepage": "https://github.com/vishal2796/basic-advanced-NodeJS#readme",
   "devDependencies": {
-    "nodemon": "^2.0.20",
-    "store": "^2.0.12"
+    "nodemon": "^1.18.3"
   },
   "dependencies": {
-    "body-parser": "^1.20.1",
-    "express": "^4.18.2",
-    "node-localstorage": "^2.2.1"
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "pug": "^2.0.3"
   }
 }
