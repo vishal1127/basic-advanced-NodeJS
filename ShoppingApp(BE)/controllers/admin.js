@@ -1,4 +1,5 @@
 const Product = require("../models/product");
+const User = require("../models/user");
 const db = require("../util/database");
 
 exports.getAddProduct = (req, res, next) => {
@@ -14,12 +15,16 @@ exports.postAddProduct = (req, res, next) => {
   const price = req.body.price;
   const imageUrl = req.body.imageUrl;
   const description = req.body.description;
-  Product.create({
-    title: title,
-    price: price,
-    imageUrl: imageUrl,
-    description: description,
-  })
+  //createProduct is automatically created when we define the user association with product (hasMany)
+  req.user
+    .createProduct({
+      title: title,
+      price: price,
+      imageUrl: imageUrl,
+      description: description,
+      userId: req.user.id,
+    })
+    // Product.create()
     .then((result) => {
       res.redirect("/admin/products");
     })
@@ -33,8 +38,11 @@ exports.getEditProduct = (req, res, next) => {
     return res.redirect("/");
   }
   const prodId = req.params.productId;
-  Product.findByPk(prodId)
-    .then((product) => {
+  req.user
+    .getProducts({ where: { id: prodId } })
+    // Product.findByPk(prodId)
+    .then((products) => {
+      let product = products[0];
       if (!product) {
         return res.redirect("/");
       }
@@ -81,7 +89,9 @@ exports.getDeleteProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-  Product.findAll()
+  req.user
+    .getProducts()
+    // Product.findAll()
     .then((products) => {
       res.render("admin/products", {
         prods: products,
